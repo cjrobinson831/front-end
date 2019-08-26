@@ -18,6 +18,7 @@ export default function Dashboard (props) {
         setExpenses([...expenses, expense]);
     }
 
+   
 
     return (
 
@@ -59,21 +60,25 @@ export default function Dashboard (props) {
                 <ul className="totals-header">
                     <li>                    
                         You Need to Pay Your Friends <br/>
-                        <p className = "owesTotal"></p> {/* update the totals here */}
+                        <p className = "owesTotal">$0.00</p> {/* update the totals here */}
                         
                     </li>
 
                     <li>                    
                         Your Friends Owe You
-                        <p className = "owedTotal"></p> {/* update the totals here */}
+                        <p className = "owedTotal">$0.00</p> {/* update the totals here */}
 
                     </li>
                 </ul>
                 
                 {/* LIST OF BILLS HISTORY */}
                 <div className = "bills-list-div">  
-
-                    <ExpenseDetails expenses = {expenses} />                  
+                   
+                     
+                    <div> Add an Expense to start Splitting!!</div>                       
+                    
+                    <ExpenseDetails expenses = {expenses} />   
+                       
         
                     
                 </div>  {/*end bills-list-div */}
