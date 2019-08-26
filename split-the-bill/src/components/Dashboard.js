@@ -35,7 +35,7 @@ export default function Dashboard (props) {
     const logout = (e) => {
         e.preventDefault();
         localStorage.clear();
-        props.history.push('/');
+        props.history.push('/login');
     }
 
 

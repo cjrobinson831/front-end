@@ -20,13 +20,15 @@ const RegisterScreen = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('https://split-the-bill-postgres.herokuapp.com/api/users/register', newUserInfo)
+    
       .then(res => {
-        // console.log(res);
-        props.history.push('/dashboard');
         localStorage.setItem('userId', res.data.id);
-      })
-      .catch(err => {
-        console.log(err);
+        console.log(res);
+        axios.post('https://split-the-bill-postgres.herokuapp.com/api/users/login', {email: newUserInfo.email, password: newUserInfo.password})
+          .then(res => {
+            localStorage.setItem('token', res.data.token);
+            props.history.push('/dashboard');
+          })
       })
   }
 
