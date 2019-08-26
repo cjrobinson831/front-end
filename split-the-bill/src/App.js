@@ -8,20 +8,19 @@ import Dashboard from "./components/Dashboard.js";
 import AddExpenseForm from "./components/AddExpenseForm.js";
 
 function App() {
-  const [userId, setUserId] = useState('');
   return (
     // app wrapped in a router, starts by default with login page
     // will route users to dashboard once signed in or registered
     <Router>
       <div className="App">
-        <Header />
-        <Switch>
-          <Route exact path="/" setUserId={setUserId} component={LoginSignUpScreen}/>
-          <Route path ="/register" setUserId={setUserId} component={RegisterScreen}/>
-          <PrivateRoute path="/dashboard" userId={userId} component={Dashboard}/>
-        </Switch>
 
-      <AddExpenseForm />
+        <Header />
+
+        <Switch>
+          <Route exact path="/" component={LoginSignUpScreen}/>
+          <Route path ="/register" component={RegisterScreen}/>
+          <PrivateRoute path="/dashboard" component={Dashboard}/>
+        </Switch>
 
       </div>
     </Router>

@@ -21,8 +21,9 @@ const RegisterScreen = (props) => {
     e.preventDefault();
     axios.post('https://split-the-bill-postgres.herokuapp.com/api/users/register', newUserInfo)
       .then(res => {
-        console.log(res);
+        // console.log(res);
         props.history.push('/dashboard');
+        localStorage.setItem('userId', res.data.id);
       })
       .catch(err => {
         console.log(err);

@@ -20,9 +20,7 @@ function AddExpenseForm(props) {
 
   return (
 
-    <div className = "user-form">
-
-      <h1> SIGN UP </h1>
+    <div className = "user-form">      
 
         <Form>
 
@@ -30,33 +28,29 @@ function AddExpenseForm(props) {
             <Field className = "form-input" type="text" name="expensetitle" placeholder="What is this expense for?" />
             {touched.expensetitle && errors.expensetitle && <p>{errors.expensetitle}</p>}
           </div>
-         
-          <div className = "form-input-div">        
-            <Field className = "form-input" type="email" name="email" placeholder="Email" />
-            {touched.email && errors.email && <p>{errors.email}</p>}
-          </div>
 
           <div className = "form-input-div">       
-            <Field className = "form-input" type="password" name="password" placeholder="Password" />
-            {touched.password && errors.password && <p>{errors.password}</p>}
+            <Field className = "form-input" type="number" name="numfriends" placeholder="How many people (including you)?" />
+            {touched.numfriends && errors.numfriends && <p>{errors.numfriends}</p>}
           </div>
 
-                    
-          <button disabled={isSubmitting}>Sign Up</button>
-
-          <div >
-            <label>
-              Already have an account? <Link to = "/"> Log In Here </Link> 
-                           
-            </label>
+          <div className = "form-input-div">        
+            <Field className = "form-input" type="text" name="name" placeholder="Names of your friends" />
+            {touched.name && errors.name && <p>{errors.name}</p>}
           </div>
+         
+          <div className = "form-input-div">        
+            <Field className = "form-input" type="email" name="email" placeholder="Their Email Addresses" />
+            {touched.email && errors.email && <p>{errors.email}</p>}
+          </div>
+                             
+          <button disabled={isSubmitting}>Calculate</button>
 
+          
         </Form>
-
        
 
     </div>
-
    
   );
 }
@@ -66,11 +60,12 @@ const FormikAddExpenseForm = withFormik({
 
   /*mapPropsToValues is used to initialise the values of the form state. Formik transfers the results of 
     mapPropsToValues into updatable form state and makes these values available to the new component as props.values.*/
-  mapPropsToValues({ expensetitlename, email, password }) {
+  mapPropsToValues({ expensetitle, numfriends, name, email }) {
     return { 
-      expensetitlename: expensetitlename || "",    
-      email: email || "",
-      password: password || ""     
+      expensetitle: expensetitle || "",
+      numfriends: numfriends || "",
+      name: name || "",    
+      email: email || "",         
      
     };
   },
@@ -78,15 +73,15 @@ const FormikAddExpenseForm = withFormik({
   //YUP VALIDATION: validationSchema- helps with validation inside the form
   //shape refers to the shape of the data type that we are looking for, for eg. string is required for text fields
   validationSchema: Yup.object().shape({  
-    name: Yup.string()
-      .min(2, "Your name must be 2 characters or longer")
+    expensetitle: Yup.string()      
+      .required("Expene title is required"), 
+    numfriends: Yup.number()      
+      .required("Number of friends is required"), 
+    name: Yup.string()      
       .required("Name is required"), 
     email: Yup.string()
       .email("Email is not valid")
-      .required("Email is required"),
-    password: Yup.string()
-      .min(5, "Password must be 5 characters or longer")
-      .required("Password is required")
+      .required("Email is required")   
     
   }),
 
