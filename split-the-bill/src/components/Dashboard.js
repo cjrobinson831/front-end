@@ -38,8 +38,7 @@ export default function Dashboard (props) {
                     </li>
                 </ul>
                 
-                <div className = "bills-list-div">
-        
+                <div className = "bills-list-div">      
                     
         
                     
