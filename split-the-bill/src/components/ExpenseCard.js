@@ -26,7 +26,7 @@ export default function ExpenseCard(props) {
         <Card.Description>
           {`Email: ${props.email}`}          
         </Card.Description>
-        
+
       </Card.Content>
       <Card.Content extra>
         

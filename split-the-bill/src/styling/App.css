@@ -72,3 +72,8 @@
   .expense-list {
       width: 100%;
   }
+
+  .form-input {
+      width: 80%;
+      margin: 10px 0;
+  }

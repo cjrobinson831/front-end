@@ -30,7 +30,7 @@ function AddExpenseForm(props) {
           </div>
 
           <div className = "form-input-div">       
-            <Field className = "form-input" type="number" name="total" placeholder="How muuch was the bill?" />
+            <Field className = "form-input" type="number" name="total" placeholder="How much was the bill?" />
             {touched.total && errors.total && <p>{errors.total}</p>}
           </div>
 
