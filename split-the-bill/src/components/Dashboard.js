@@ -7,6 +7,7 @@ import "../styling/App.css";
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 import AddExpenseForm from "./AddExpenseForm";
+import ExpenseDetails from "./ExpenseDetails.js";
 
 export default function Dashboard (props) {
     const [user, setUser] = useState({});
@@ -63,7 +64,9 @@ export default function Dashboard (props) {
 
                         <Modal.Header>Add an Expense</Modal.Header>
 
-                        <AddExpenseForm  addExpense = {addExpense}/>              
+                        <AddExpenseForm  addExpense = {addExpense}/>     
+
+                                
            
                     </Modal>
      
@@ -80,8 +83,9 @@ export default function Dashboard (props) {
                     </li>
                 </ul>
                 
-                <div className = "bills-list-div">      
-                    
+                <div className = "bills-list-div">  
+
+                    <ExpenseDetails expenses = {expenses} />                      
         
                     
                 </div>  {/*end bills-list-div */}
