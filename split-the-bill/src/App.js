@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LoginSignUpScreen from './components/LoginSignUpScreen';
 import PrivateRoute from './components/PrivateRoute';
 import Header from './components/Header';
+import RegisterScreen from './components/RegisterScreen';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={LoginSignUpScreen}/>
+          <Route path ="/register" component={RegisterScreen}/>
           <PrivateRoute path="/protected"/>
         </Switch>
       </div>
