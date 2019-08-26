@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LoginSignUpScreen from './components/LoginSignUpScreen';
 import Dashboard from "./components/Dashboard.js";
+import AddExpenseForm from "./components/AddExpenseForm.js";
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
       </Switch>
 
       <Dashboard />
+
+      <AddExpenseForm />
+
       </div>
     </Router>
   );

@@ -5,7 +5,15 @@ import 'semantic-ui-css/semantic.css';
 import 'semantic-ui-css/semantic.min.css'; 
 import "../styling/App.css";
 
+import AddExpenseForm from "./AddExpenseForm";
+
 export default function Dashboard (props) {
+
+    //when the add expense button is clicked it opens the expense form
+    const openExpenseForm = event => {
+       
+    }
+
 
     return (
 
@@ -15,7 +23,7 @@ export default function Dashboard (props) {
 
                     <h1>SplitProof</h1>  
 
-                     <button> Log Out </button>                       
+                    <button> Log Out </button>                       
     
             </div>
 
@@ -24,7 +32,18 @@ export default function Dashboard (props) {
                 <div className = "dashboard-header-div">
                         <h1>Welcome "User" </h1>
         
-                        <button> Add An Expense </button>        
+                    {/*MODAL THAT TRIGGERS THE ADD EXPENSE FORM */}
+                    <Modal trigger = {
+
+                        <Button>Add Expense</Button>               
+                        } closeIcon>
+
+                        <Modal.Header>Add a Bill</Modal.Header>
+
+                        <AddExpenseForm />                
+           
+                    </Modal>
+     
         
                 </div>
 
@@ -42,20 +61,13 @@ export default function Dashboard (props) {
                     
         
                     
-                </div>
+                </div>  {/*end bills-list-div */}
 
             </div> {/*end dashboard div */}
         
         </div> /*end container div */
     
-        );
-    
-    
+    );//end return
 
-
-
-
-
-
-}
+}//end function
 
