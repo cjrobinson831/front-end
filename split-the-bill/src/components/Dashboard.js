@@ -54,20 +54,26 @@ export default function Dashboard (props) {
      
         
                 </div>
-
+                
+                {/* DISPLAYS THE OWED AND OWES RUNNING TOTALS */}
                 <ul className="totals-header">
                     <li>                    
-                        You Need to Pay Your Friends
+                        You Need to Pay Your Friends <br/>
+                        <p className = "owesTotal"></p> {/* update the totals here */}
+                        
                     </li>
 
                     <li>                    
                         Your Friends Owe You
+                        <p className = "owedTotal"></p> {/* update the totals here */}
+
                     </li>
                 </ul>
                 
+                {/* LIST OF BILLS HISTORY */}
                 <div className = "bills-list-div">  
 
-                    <ExpenseDetails expenses = {expenses} />                      
+                    <ExpenseDetails expenses = {expenses} />                  
         
                     
                 </div>  {/*end bills-list-div */}

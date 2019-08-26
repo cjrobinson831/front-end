@@ -14,7 +14,7 @@ function AddExpenseForm(props) {
   //used to display the form data on the screen  
   useEffect(() => {
     if (status) {//status is a default prop on Formik
-        props.addExpense(status);
+        props.addExpense(status); //cals the addExpense form in Dashboard.js
     }
   }, [status]);
 
@@ -99,8 +99,8 @@ const FormikAddExpenseForm = withFormik({
     axios
         /*we're using reqres.in for this assignment's API. It's a free API that allows us to simulate a POST request 
         for any data that we send it */
-    .post("https://reqres.in/api/users", values)
-    .then(res => {
+      .post("https://reqres.in/api/users", values)
+      .then(res => {
         console.log("add expense", res); // Data was created successfully and logs to console
 
         //setStatus handles data coming back from the server- setting status gives you a way to communicate with your component

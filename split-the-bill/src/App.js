@@ -14,9 +14,7 @@ function App() {
         <Route exact path="/" component={LoginSignUpScreen}/>
       </Switch>
 
-      <Dashboard />
-
-      
+      <Dashboard />    
       
 
       </div>
