@@ -20,8 +20,7 @@
       flex-direction: column;
       justify-content: center;
       width: 60%;
-      margin: 6% auto;
-      margin-top: 10%;
+      margin: 3% auto;
 
       input {
         width: 70%;
@@ -61,11 +60,17 @@
     .register-description {
       width: 80%;
       margin: auto;
-      height: 100px;
+      height: 50px;
       border-top: 1px solid rgba(255, 255, 255, 0.747);
 
       p {
         color: white;
+        margin-top: 5px;
+
+        a {
+          color: white;
+          text-decoration: underline;
+        }
       }
     }
   } // login-form-container
