@@ -24,7 +24,8 @@ const LoginSignupScreen = (props) => {
       .then(res => {
         console.log(res);
         localStorage.setItem('token', res.data.token);
-        props.history.push('/protected');
+        props.history.push('/dashboard');
+        props.setUserId(res.data.user.id);
       })
       .catch (err => {
         console.log(err);
