@@ -1,0 +1,55 @@
+.login-screen {
+
+  .login-form-container {
+    width: 50vw;
+    height: 50vh;
+    margin: 10vh auto;
+    border-radius: 5px;
+    background: #2eb497;
+    padding: 2%;
+
+    .login-form-title {
+      color: white;
+      font-size: 2.8rem;
+      margin: 0;
+      margin: 10px auto;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 60%;
+      margin: 6% auto;
+
+      input {
+        width: 70%;
+        height: 3rem;
+        font-size: 1.3rem;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        text-align: center;
+        margin: 3% auto;
+      }
+      button {
+        font-size: 1.2rem;
+        width: 10vw;
+        margin: 6% auto;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        height: 2rem;
+        border-radius: 3px;
+        color: white;
+        background: #2e4bb4;
+      }
+    } // login-form
+    .register-description {
+      width: 80%;
+      margin: auto;
+      height: 100px;
+      border-top: 1px solid rgba(255, 255, 255, 0.747);
+    }
+  } // login-form-container
+}
