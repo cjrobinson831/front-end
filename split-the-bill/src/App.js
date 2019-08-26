@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LoginSignUpScreen from './components/LoginSignUpScreen';
+import Dashboard from "./components/Dashboard.js";
 
 function App() {
   return (
@@ -9,6 +10,8 @@ function App() {
       <Switch>
         <Route exact path="/" component={LoginSignUpScreen}/>
       </Switch>
+
+      <Dashboard />
       </div>
     </Router>
   );
