@@ -1,11 +1,16 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import LoginSignUpScreen from './components/LoginSignUpScreen';
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <Router>
+      <div className="App">
+      <Switch>
+        <Route exact path="/" component={LoginSignUpScreen}/>
+      </Switch>
+      </div>
+    </Router>
   );
 }
 
