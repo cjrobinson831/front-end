@@ -5,6 +5,8 @@ import Dashboard from "./components/Dashboard.js";
 import AddExpenseForm from "./components/AddExpenseForm.js";
 
 function App() {
+ 
+
   return (
     <Router>
       <div className="App">
@@ -14,7 +16,8 @@ function App() {
 
       <Dashboard />
 
-      <AddExpenseForm />
+      
+      
 
       </div>
     </Router>

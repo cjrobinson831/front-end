@@ -9,9 +9,11 @@ import AddExpenseForm from "./AddExpenseForm";
 
 export default function Dashboard (props) {
 
-    //when the add expense button is clicked it opens the expense form
-    const openExpenseForm = event => {
-       
+    //keeps track of expenses
+    const [expenses, setExpenses] = useState([]);
+
+    const addExpense = (expense) => {
+        setExpenses([...expenses, expense]);
     }
 
 
@@ -38,9 +40,9 @@ export default function Dashboard (props) {
                         <Button>Add Expense</Button>               
                         } closeIcon>
 
-                        <Modal.Header>Add a Bill</Modal.Header>
+                        <Modal.Header>Add an Expense</Modal.Header>
 
-                        <AddExpenseForm />                
+                        <AddExpenseForm  addExpense = {addExpense}/>              
            
                     </Modal>
      
