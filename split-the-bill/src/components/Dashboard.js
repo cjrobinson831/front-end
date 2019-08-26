@@ -27,6 +27,7 @@ export default function Dashboard (props) {
     //keeps track of expenses
     const [expenses, setExpenses] = useState([]);
 
+    //adds an expense to the expenses array when the calculate button on the add expense form is clicked
     const addExpense = (expense) => {
         setExpenses([...expenses, expense]);
     }
@@ -41,8 +42,10 @@ export default function Dashboard (props) {
 
     return (
 
+        /*main container for the dashboard elements */
         <div className = "dashboard-container">
-    
+
+            {/* logo and log out button */}
             <div className = "navbar">
 
                     <h1>SplitProof</h1>  
@@ -51,8 +54,10 @@ export default function Dashboard (props) {
     
             </div>
 
+            {/* dashboard*/}
             <div className = "dashboard-div">
 
+                {/* dashboard*/}
                 <div className = "dashboard-header-div">
                         <h1>Welcome {user.firstname} </h1>
         
@@ -64,28 +69,36 @@ export default function Dashboard (props) {
 
                         <Modal.Header>Add an Expense</Modal.Header>
 
-                        <AddExpenseForm  addExpense = {addExpense}/>     
-
-                                
+                        <AddExpenseForm  addExpense = {addExpense}/>                                     
            
                     </Modal>
      
         
                 </div>
-
+                
+                {/* DISPLAYS THE OWED AND OWES RUNNING TOTALS */}
                 <ul className="totals-header">
                     <li>                    
-                        You Need to Pay Your Friends
+                        You Need to Pay Your Friends <br/>
+                        <p className = "owesTotal">$0.00</p> {/* update the totals here */}
+                        
                     </li>
 
                     <li>                    
                         Your Friends Owe You
+                        <p className = "owedTotal">$0.00</p> {/* update the totals here */}
+
                     </li>
                 </ul>
                 
+                {/* LIST OF BILLS HISTORY */}
                 <div className = "bills-list-div">  
-
-                    <ExpenseDetails expenses = {expenses} />                      
+                   
+                     
+                    <div> Add an Expense to start Splitting!!</div>                       
+                    
+                    <ExpenseDetails expenses = {expenses} />   
+                       
         
                     
                 </div>  {/*end bills-list-div */}

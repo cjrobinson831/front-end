@@ -5,12 +5,16 @@ import 'semantic-ui-css/semantic.min.css';
 
 export default function ExpenseCard(props) {
 
+  {/* calculate what each person owes */}
   const splitBill = props.total/props.numfriends;
 
   return (
+
+    /* semantic ui card component that displays each expense details */
     <Card>
       <Card.Content>
         <Card.Header>{props.title}</Card.Header>
+
         <Card.Description>
           {`Bill Total: ${props.total}`}
         </Card.Description>
@@ -26,14 +30,16 @@ export default function ExpenseCard(props) {
         <Card.Description>
           {`Email: ${props.email}`}          
         </Card.Description>
-        
+
       </Card.Content>
+
       <Card.Content extra>
         
           <Icon name="dollar sign" />
           {`Each of your friends owe you: ${splitBill}`}
         
       </Card.Content>
+
     </Card>
 
   );
