@@ -54,9 +54,8 @@
       width: 50%;
   }
 
-  .ui.menu {
-    background: pink;  
-    font-size:20px;
+  .ui.card {
+    width: 100%;
    
   }
   
@@ -68,4 +67,8 @@
     justify-content: stretch;
     align-items: stretch;
     
+  }
+
+  .expense-list {
+      width: 100%;
   }

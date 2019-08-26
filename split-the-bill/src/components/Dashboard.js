@@ -6,6 +6,7 @@ import 'semantic-ui-css/semantic.min.css';
 import "../styling/App.css";
 
 import AddExpenseForm from "./AddExpenseForm";
+import ExpenseDetails from "./ExpenseDetails.js";
 
 export default function Dashboard (props) {
 
@@ -42,7 +43,9 @@ export default function Dashboard (props) {
 
                         <Modal.Header>Add an Expense</Modal.Header>
 
-                        <AddExpenseForm  addExpense = {addExpense}/>              
+                        <AddExpenseForm  addExpense = {addExpense}/>     
+
+                                
            
                     </Modal>
      
@@ -59,8 +62,9 @@ export default function Dashboard (props) {
                     </li>
                 </ul>
                 
-                <div className = "bills-list-div">      
-                    
+                <div className = "bills-list-div">  
+
+                    <ExpenseDetails expenses = {expenses} />                      
         
                     
                 </div>  {/*end bills-list-div */}

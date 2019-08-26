@@ -20,7 +20,7 @@ function AddExpenseForm(props) {
 
   return (
 
-    <div className = "user-form">      
+    <div className = "expense-form">      
 
         <Form>
 
@@ -28,6 +28,12 @@ function AddExpenseForm(props) {
             <Field className = "form-input" type="text" name="expensetitle" placeholder="What is this expense for?" />
             {touched.expensetitle && errors.expensetitle && <p>{errors.expensetitle}</p>}
           </div>
+
+          <div className = "form-input-div">       
+            <Field className = "form-input" type="number" name="total" placeholder="How muuch was the bill?" />
+            {touched.total && errors.total && <p>{errors.total}</p>}
+          </div>
+
 
           <div className = "form-input-div">       
             <Field className = "form-input" type="number" name="numfriends" placeholder="How many people (including you)?" />
@@ -60,9 +66,10 @@ const FormikAddExpenseForm = withFormik({
 
   /*mapPropsToValues is used to initialise the values of the form state. Formik transfers the results of 
     mapPropsToValues into updatable form state and makes these values available to the new component as props.values.*/
-  mapPropsToValues({ expensetitle, numfriends, name, email }) {
+  mapPropsToValues({ expensetitle, total, numfriends, name, email }) {
     return { 
       expensetitle: expensetitle || "",
+      total: total || "",
       numfriends: numfriends || "",
       name: name || "",    
       email: email || "",         
@@ -75,6 +82,8 @@ const FormikAddExpenseForm = withFormik({
   validationSchema: Yup.object().shape({  
     expensetitle: Yup.string()      
       .required("Expene title is required"), 
+    numfriends: Yup.number()      
+      .required("Total is required"), 
     numfriends: Yup.number()      
       .required("Number of friends is required"), 
     name: Yup.string()      
