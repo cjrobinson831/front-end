@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-const LoginSignupScreen = () => {
+const LoginSignupScreen = (props) => {
   const [loginCredentials, setLoginCredentials] = useState({
     email: '',
     password: ''
@@ -18,6 +18,17 @@ const LoginSignupScreen = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    axios.post(
+      'https://split-the-bill-postgres.herokuapp.com/api/users/login', loginCredentials
+      )
+      .then(res => {
+        console.log(res);
+        localStorage.setItem('token', res.data.token);
+        props.history.push('/protected');
+      })
+      .catch (err => {
+        console.log(err);
+      })
   }
 
   return (
