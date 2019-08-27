@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LoginSignUpScreen from './components/LoginSignUpScreen';
 import PrivateRoute from './components/PrivateRoute';
-import Header from './components/Header';
+import SplitProofHeader from './components/SplitProofHeader';
 import RegisterScreen from './components/RegisterScreen';
 import Dashboard from "./components/Dashboard.js";
 import AddExpenseForm from "./components/AddExpenseForm.js";
@@ -14,7 +14,7 @@ function App() {
     <Router>
       <div className="App">
 
-        <Header />
+        <SplitProofHeader />
 
         <Switch>
           <Route exact path="/" component={LoginSignUpScreen}/>

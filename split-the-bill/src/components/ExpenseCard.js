@@ -13,7 +13,7 @@ export default function ExpenseCard(props) {
     /* semantic ui card component that displays each expense details */
     <Card>
       <Card.Content>
-        <Card.Header> {`Bill # ${props.total}`} </Card.Header>
+        <Card.Header> {`Bill # ${props.total}`}  <Icon className = "delete-icon" name='delete' /> </Card.Header>
 
         <Card.Description>
           {`Date: ${props.date}`}
@@ -36,9 +36,9 @@ export default function ExpenseCard(props) {
 
       <Card.Content extra>
         
-          <Icon name="edit outline" />
-          <Icon name="mail" />          
-          <Icon className = "delete-icon" name='delete' />
+          <Icon name="edit outline" /> 
+          <Icon name="mail" />         
+         
           
           
         
