@@ -11,6 +11,8 @@ import ExpenseDetails from "./ExpenseDetails.js";
 
 export default function Dashboard (props) {
     const [user, setUser] = useState({});
+    //keeps track of expenses
+    const [expenses, setExpenses] = useState([]);
 
     useEffect(() => {
         // get user details and set them to state "user"
@@ -34,8 +36,8 @@ export default function Dashboard (props) {
     }, [])
     // console.log(user);
 
-    //keeps track of expenses
-    const [expenses, setExpenses] = useState([]);
+    
+    
 
     //adds an expense to the expenses array when the calculate button on the add expense form is clicked
     const addExpense = (expense) => {
@@ -107,7 +109,7 @@ export default function Dashboard (props) {
                      
                     <div> Add an Expense to start Splitting!!</div>                       
                     
-                    <ExpenseDetails expenses = {expenses} />                        
+                    <ExpenseDetails setExpenses={setExpenses} expenses = {expenses} />                        
         
                     
                 </div>  {/*end bills-list-div */}

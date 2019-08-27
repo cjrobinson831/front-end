@@ -3,7 +3,7 @@ import axios from "axios";
 
 import ExpenseCard from "./ExpenseCard.js";
 
-export default function ExpenseDetails({expenses}) {
+export default function ExpenseDetails({expenses, setExpenses}) {
 
     
       return (
@@ -11,13 +11,13 @@ export default function ExpenseDetails({expenses}) {
 
        <div className= "expense-list">
 
-            {expenses.map(expense => (
+            {expenses.map((expense, index) => (
 
             /*<ExpenseCard key={expense.id} title = {expense.expensetitle} total = {expense.total} 
                          numfriends = {expense.numfriends} name = {expense.name} email = {expense.email}
             />  */
             
-            <ExpenseCard key={expense.id} date = {expense.created_at} total = {expense.split_sum} numpeople = {expense.split_people_count}  />    
+            <ExpenseCard expenses={expenses} setExpenses={setExpenses} expense={expense} key={index} expenseId={expense.id} date = {expense.created_at} total = {expense.split_sum} numpeople = {expense.split_people_count}  />    
    
 
        ))}
