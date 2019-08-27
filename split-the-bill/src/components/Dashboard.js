@@ -21,6 +21,14 @@ export default function Dashboard (props) {
             .catch(err => {
                 console.log(err);
             })
+
+            axiosWithAuth().get(`https://split-the-bill-postgres.herokuapp.com/api/bills`)
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }, [])
     // console.log(user);
 
@@ -69,7 +77,7 @@ export default function Dashboard (props) {
 
                         <Modal.Header>Add an Expense</Modal.Header>
 
-                        <AddExpenseForm  addExpense = {addExpense}/>                                     
+                        <AddExpenseForm user={user} addExpense = {addExpense}/>                                     
            
                     </Modal>
      
