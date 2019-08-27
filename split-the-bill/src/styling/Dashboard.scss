@@ -1,0 +1,150 @@
+.dashboard-container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .navbar {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 50px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        background-color: #2eb497;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            background: #2e4bb4;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            padding: 10px;
+            box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.507);
+            margin: 35px;
+
+            &:hover {
+                background: #4862c4;
+              }
+              &:active {
+                transition: all .1s;
+                background: #798ac7;
+                transform: translateY(3px);
+                box-shadow: none;
+              }
+        }
+      }
+
+      .dashboard-div {
+        width: 50%;
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);   
+        background: #2eb497;
+        border-bottom: 2px solid#2eb29a;
+        padding: 15px;
+        margin: 3vh auto;
+
+        .dashboard-header-div {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            background: white;
+            
+            h1 {
+                margin: 10px auto;
+            }
+            button {
+                position: absolute;
+                margin-left: 10px;
+                background: #2e4bb4;
+                color: white;
+                transition: all .3s;
+
+                &:hover {
+                background: #4862c4;
+                }
+                &:active {
+                transition: all .1s;
+                background: #798ac7;
+                }
+            }
+        }
+
+        .totals-summary-div {
+            margin: 0;
+            padding: 0;
+            height: 74px;
+            list-style: none;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background: white;
+
+            li {
+                width: 40%;
+                padding: 5px 0;
+                border-radius: 5px;
+                background: #2eb497;
+                color: white;
+            }
+        }
+
+          .bills-list-div {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            justify-content: stretch;
+            align-items: stretch;
+
+            button {
+                margin: 10px auto;
+                margin-top: 20px;
+                width: 80%;
+                height: 4rem;
+                background: #2e4bb4;
+                color: white;
+                transition: all .3s;
+        
+                &:hover {
+                  background: #4862c4;
+                }
+                &:active {
+                  transition: all .1s;
+                  background: #798ac7;
+                }
+            }
+
+            .add-expense-note {
+                font-size: 1.5rem;
+                padding: 20px 0;
+                background: white;
+                margin: 5px 0;
+                background: #2eb497;
+                color: white;
+                border-radius: 15px;
+                margin-top: 15px;
+            }
+
+            .expense-list {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin: 2vh auto;
+                height: auto;
+            }
+            
+          }
+        
+          
+      }//end dashboard-div 
+    
+
+
+}//end dashboard-container

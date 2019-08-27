@@ -1,0 +1,24 @@
+.ui.card {
+    width: 100%;
+    text-align: left;
+
+    .header {
+        text-align: left;
+    }
+
+    .delete-icon::before {
+        padding: 5px;
+        &:hover {
+            background: grey;
+        }
+    }
+
+    .delete-icon {
+       position: absolute;
+       padding: 3px;
+       right: 5px;
+       top: 5px;
+       cursor: pointer;
+    }
+   
+  }
