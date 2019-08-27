@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Segment, Header, Card, Button, Icon, Modal, Menu } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.css'; 
 import 'semantic-ui-css/semantic.min.css'; 
-import "../styling/App.css";
+//import "../styling/App.css";
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 import AddExpenseForm from "./AddExpenseForm";
@@ -77,7 +77,7 @@ export default function Dashboard (props) {
                 </div>
                 
                 {/* DISPLAYS THE OWED AND OWES RUNNING TOTALS */}
-                <ul className="totals-header">
+                <ul className="totals-summary-div">
                     <li>                    
                         You Need to Pay Your Friends <br/>
                         <p className = "owesTotal">$0.00</p> {/* update the totals here */}
@@ -97,8 +97,7 @@ export default function Dashboard (props) {
                      
                     <div> Add an Expense to start Splitting!!</div>                       
                     
-                    <ExpenseDetails expenses = {expenses} />   
-                       
+                    <ExpenseDetails expenses = {expenses} />                        
         
                     
                 </div>  {/*end bills-list-div */}
