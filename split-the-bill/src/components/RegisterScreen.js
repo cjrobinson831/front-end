@@ -44,12 +44,14 @@ const RegisterScreen = (props) => {
             name="firstname"
             placeholder="First Name"
             type="text"
+            required
             />
             <input 
             onChange={handleChange}
             name="lastname"
             placeholder="Last Name"
             type="text"
+            required
             />
           </div>
 
@@ -71,6 +73,9 @@ const RegisterScreen = (props) => {
           </div>
           <button>Submit</button>
         </form>
+        <div onClick={() => props.history.push('/')} className="back-to-login-btn">
+          <p>{"<"} Back To Login</p>
+        </div>
       </div>
     </div>
   );
