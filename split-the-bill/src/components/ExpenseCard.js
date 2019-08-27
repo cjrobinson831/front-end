@@ -14,7 +14,7 @@ export default function ExpenseCard(props) {
     axiosWithAuth().delete(`https://split-the-bill-postgres.herokuapp.com/api/bills/${expense.id}`)
       .then(res => {
         console.log(res);
-        // filter out the expense we just deleted using it's "id"
+        // filter out the expense we just deleted using its "id"
         props.setExpenses(props.expenses.filter(expense => expense.id !== props.expense.id))
       })
       .catch(err => {

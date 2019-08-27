@@ -50,7 +50,7 @@ function AddExpenseForm(props) {
           {touched.email && errors.email && <p>{errors.email}</p>} */}
                 
                              
-          <button disabled={isSubmitting}>Calculate</button>
+          <button type="submit" disabled={isSubmitting}>Calculate</button>
           
         </Form>
        

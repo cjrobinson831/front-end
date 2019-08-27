@@ -17,6 +17,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        button {
+
+        }
       }
 
       .dashboard-div {
@@ -40,6 +44,15 @@
             button {
                 background: #2e4bb4;
                 color: white;
+                transition: all .3s;
+
+                &:hover {
+                background: #4862c4;
+                }
+                &:active {
+                transition: all .1s;
+                background: #798ac7;
+                }
             }
         }
 
@@ -64,6 +77,35 @@
             flex-direction: column;
             justify-content: stretch;
             align-items: stretch;
+
+            button {
+                margin: 10px auto;
+                margin-top: 20px;
+                width: 80%;
+                height: 4rem;
+                background: #2e4bb4;
+                color: white;
+                transition: all .3s;
+        
+                &:hover {
+                  background: #4862c4;
+                }
+                &:active {
+                  transition: all .1s;
+                  background: #798ac7;
+                }
+            }
+
+            .add-expense-note {
+                font-size: 1.5rem;
+                padding: 20px 0;
+                background: white;
+                margin: 5px 0;
+                background: #2eb497;
+                color: white;
+                border-radius: 15px;
+                margin-top: 15px;
+            }
 
             .expense-list {
                 display: flex;

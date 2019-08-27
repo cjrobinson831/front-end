@@ -73,7 +73,8 @@ export default function Dashboard (props) {
                 <div className = "dashboard-header-div">
                         <h1>Welcome {user.firstname} </h1>
         
-                    {/*MODAL THAT TRIGGERS THE ADD EXPENSE FORM */}
+                    {  
+                    expenses.length > 0 ?
                     <Modal trigger = {
 
                         <Button>Add Expense</Button>               
@@ -84,7 +85,9 @@ export default function Dashboard (props) {
                         <AddExpenseForm addExpense = {addExpense}/>                                     
            
                     </Modal>
-     
+                    :
+                    null 
+                    }
         
                 </div>
                 
@@ -106,11 +109,21 @@ export default function Dashboard (props) {
                 {/* LIST OF BILLS HISTORY */}
                 <div className = "bills-list-div">  
                    
-                     
-                    <div> Add an Expense to start Splitting!!</div>                       
-                    
-                    <ExpenseDetails setExpenses={setExpenses} expenses = {expenses} />                        
-        
+                    {
+                        expenses.length > 0 ? 
+                        <ExpenseDetails setExpenses={setExpenses} expenses = {expenses} /> 
+                        : 
+                        <Modal trigger = {
+
+                            <Button>Add Expense To Start Splitting</Button>               
+                            } closeIcon>
+    
+                            <Modal.Header>Add an Expense</Modal.Header>
+    
+                            <AddExpenseForm addExpense = {addExpense}/>                                     
+               
+                        </Modal>
+                    }                    
                     
                 </div>  {/*end bills-list-div */}
 
