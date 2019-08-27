@@ -22,9 +22,10 @@ export default function Dashboard (props) {
                 console.log(err);
             })
 
-            axiosWithAuth().get(`https://split-the-bill-postgres.herokuapp.com/api/bills`)
+            axiosWithAuth().get(`https://split-the-bill-postgres.herokuapp.com/api/users/${localStorage.getItem('userId')}/bills`)
             .then(res => {
                 console.log(res);
+                setExpenses(res.data);
             })
             .catch(err => {
                 console.log(err);

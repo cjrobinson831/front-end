@@ -21,11 +21,6 @@ function App() {
           <Route path ="/register" component={RegisterScreen}/>
           <PrivateRoute path="/dashboard" component={Dashboard}/>
         </Switch>
-
-        <Dashboard />
-
-
-
       </div>
     </Router>
   );
