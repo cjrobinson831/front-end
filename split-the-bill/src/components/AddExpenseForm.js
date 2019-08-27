@@ -15,7 +15,7 @@ function AddExpenseForm(props) {
   //used to display the form data on the screen  
   useEffect(() => {
     if (status) {//status is a default prop on Formik
-        props.addExpense(status); //cals the addExpense form in Dashboard.js
+        props.addExpense(status); //calls the addExpense form in Dashboard.js
     }
   }, [status]);
 

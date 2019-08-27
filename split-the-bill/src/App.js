@@ -8,6 +8,10 @@ import Dashboard from "./components/Dashboard.js";
 import AddExpenseForm from "./components/AddExpenseForm.js";
 
 function App() {
+
+  
+ 
+
   return (
     // app wrapped in a router, starts by default with login page
     // will route users to dashboard once signed in or registered
@@ -20,6 +24,8 @@ function App() {
           <Route exact path="/" component={LoginSignUpScreen}/>
           <Route path ="/register" component={RegisterScreen}/>
           <PrivateRoute path="/dashboard" component={Dashboard}/>
+
+          
         </Switch>
       </div>
     </Router>

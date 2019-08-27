@@ -34,7 +34,7 @@ const LoginSignupScreen = (props) => {
   return (
     <div className="login-screen">
       <div className="login-form-container">
-        <h2 className="login-form-title">Login Below</h2>
+        <h2 className="login-form-title">Login</h2>
         <form onSubmit={handleSubmit} className="login-form">
           <input 
           onChange={handleChange}
