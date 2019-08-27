@@ -1,9 +1,28 @@
-import React from "react";
-import { Tab, Menu, Icon, Card, List, Image, Button } from "semantic-ui-react";
+import React, { useState, useEffect } from 'react';
+import { Tab, Menu, Icon, Card, List, Image, Button, Modal } from "semantic-ui-react";
+import { Link, NavLink } from "react-router-dom";
 import 'semantic-ui-css/semantic.css'; 
 import 'semantic-ui-css/semantic.min.css'; 
 
+import AddExpenseForm from "./AddExpenseForm";
+
 export default function ExpenseCard(props) {
+
+   //keeps track of expenses
+   const [expenses, setExpenses] = useState([]);
+
+   
+   const editExpense = (editedExpense) => {
+       
+       const expensesCopy = [...expenses];
+       
+       const expenseIndex = expensesCopy.findIndex(expense => expense.id === editedExpense.id);
+       expensesCopy[0] = editedExpense;
+       
+       setExpenses (expensesCopy);
+   }  
+   
+  //const initialExpense = expenses.find(expense => expense.id.toString() === props.match.params.id);
 
   {/* calculate what each person owes */}
   const splitBill = (props.total/props.numpeople).toFixed(2);
@@ -35,12 +54,22 @@ export default function ExpenseCard(props) {
       </Card.Content>
 
       <Card.Content extra>
-        
-          <Icon name="edit outline" /> 
-          <Icon name="mail" />         
-         
-          
-          
+
+        {/*MODAL THAT TRIGGERS THE ADD EXPENSE FORM */}
+        <Modal trigger = {
+
+        <Icon name="edit outline" />              
+        } closeIcon>
+
+        <Modal.Header>Edit Expense</Modal.Header>
+
+        <AddExpenseForm {...props}  addExpense = {editExpense}  />                               
+
+        </Modal>   
+                 
+        {/*<Icon name="edit outline" /> */}
+
+        <Icon name="mail" />         
         
       </Card.Content>
 

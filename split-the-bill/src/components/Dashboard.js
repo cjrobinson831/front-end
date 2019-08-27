@@ -32,6 +32,20 @@ export default function Dashboard (props) {
         setExpenses([...expenses, expense]);
     }
 
+    
+    const editExpense = (editedExpense) => {
+        
+        const expensesCopy = [...expenses];
+        
+        const expenseIndex = expensesCopy.findIndex(expense => expense.id === editedExpense.id);
+        expensesCopy[0] = editedExpense;
+        
+        setExpenses (expensesCopy);
+    }  
+    
+    //const initialExpense = expenses.find(expense => expense.id.toString() === props.match.params.id);
+
+
     // fire on logout button, clears token and pushes user back to login page
     const logout = (e) => {
         e.preventDefault();
@@ -59,20 +73,22 @@ export default function Dashboard (props) {
 
                 {/* dashboard*/}
                 <div className = "dashboard-header-div">
-                        <h1>Welcome {user.firstname} </h1>
-        
+
+                    <h1>Welcome {user.firstname} </h1>
+
                     {/*MODAL THAT TRIGGERS THE ADD EXPENSE FORM */}
                     <Modal trigger = {
 
                         <Button>Add Expense</Button>               
                         } closeIcon>
 
-                        <Modal.Header>Add an Expense</Modal.Header>
+                        <Modal.Header>Add Expense</Modal.Header>
 
                         <AddExpenseForm  addExpense = {addExpense}/>                                     
-           
+
                     </Modal>
-     
+        
+                         
         
                 </div>
                 
