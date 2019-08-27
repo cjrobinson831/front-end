@@ -22,6 +22,10 @@ function App() {
           <PrivateRoute path="/dashboard" component={Dashboard}/>
         </Switch>
 
+        <Dashboard />
+
+
+
       </div>
     </Router>
   );
