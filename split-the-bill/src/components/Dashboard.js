@@ -13,10 +13,20 @@ export default function Dashboard (props) {
     const [user, setUser] = useState({});
 
     useEffect(() => {
+        // get user details and set them to state "user"
         axiosWithAuth().get(`https://split-the-bill-postgres.herokuapp.com/api/users/${localStorage.getItem('userId')}`)
             .then(res => {
-                // console.log(res);
+                console.log(res);
                 setUser(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+        // then get all bills for the user and set them to state "expenses"
+        axiosWithAuth().get(`https://split-the-bill-postgres.herokuapp.com/api/users/${localStorage.getItem('userId')}/bills`)
+            .then(res => {
+                console.log(res);
+                setExpenses(res.data);
             })
             .catch(err => {
                 console.log(err);
@@ -84,8 +94,8 @@ export default function Dashboard (props) {
 
                         <Modal.Header>Add Expense</Modal.Header>
 
-                        <AddExpenseForm  addExpense = {addExpense}/>                                     
-
+                        <AddExpenseForm addExpense = {addExpense}/>                                     
+           
                     </Modal>
         
                          

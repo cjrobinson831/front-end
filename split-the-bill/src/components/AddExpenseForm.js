@@ -6,10 +6,11 @@ import axios from "axios";
 import { Link, NavLink } from "react-router-dom";
 
 import ExpenseDetails from "./ExpenseDetails.js";
+import { axiosWithAuth } from "../utils/axiosWithAuth.js";
 
 function AddExpenseForm(props) {  
 
-   const { values, errors, touched, isSubmitting, status } = props;
+   const { values, errors, touched, isSubmitting, status, } = props;
 
   //used to display the form data on the screen  
   useEffect(() => {
@@ -84,8 +85,8 @@ const FormikAddExpenseForm = withFormik({
 
   //formik handles all side effects so we dont need to use useEffect
   handleSubmit(values, { resetForm, setErrors, setStatus, setSubmitting }) {
-    axios       
-      .post("https://reqres.in/api/users", values)
+    axiosWithAuth()       
+      .post("https://split-the-bill-postgres.herokuapp.com/api/bills/", {...values, user_id: localStorage.getItem('userId')})
       .then(res => {
         console.log("add expense", res); // Data was created successfully and logs to console
 

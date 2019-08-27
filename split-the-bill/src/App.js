@@ -27,11 +27,6 @@ function App() {
 
           
         </Switch>
-
-        <Dashboard />
-
-
-
       </div>
     </Router>
   );
